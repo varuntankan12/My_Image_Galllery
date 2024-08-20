@@ -90,7 +90,7 @@ const PopupModel = ({ darkmode, imagedata, closeModal, getPhotos, setSearchItem 
                             <button className='text-[#ECECEC] font-semibold border-[1px] lg:py-[7px] lg:px-[10px] rounded-[3.29px] lg:min-w-[60px] flex items-center gap-1 px-2 py-1 text-sm'><BsShare />Share</button>
                             <button className='text-[#ECECEC] font-semibold border-[1px] lg:py-[7px] lg:px-[10px] rounded-[3.29px] lg:min-w-[60px] flex items-center gap-1 px-2 py-1 text-sm'><BsInfoCircle />Info</button>
                         </div>
-                        <button onClick={() => { download(imagedata.urls.full) }} className='hidden lg:block h-[39px] text-center text-sm text-[#FFFFFF] px-6 bg-[#3CB46E] rounded-lg'>{downloaded ? <span>{downloaded}% Downloading...</span> : "Download Image"}</button>
+                        <button onClick={() => { download(imagedata.urls.full) }} className='hidden lg:block h-[39px] text-center text-sm text-[#FFFFFF] px-6 bg-[#3CB46E] rounded-lg'>{downloaded ? <span>{downloaded}% {downloaded == 100?"Downloaded":"Downloading..."}</span> : "Download Image"}</button>
                     </div>
                 </div>
                 <div className="lg:px-6 rounded-b-2xl mb-3 lg:m-0">
@@ -109,7 +109,7 @@ const PopupModel = ({ darkmode, imagedata, closeModal, getPhotos, setSearchItem 
                             </div>
                         </div>
                         <div className='flex flex-col justify-center gap-2 mr-2'>
-                            <button onClick={() => { download(imagedata.urls.full) }} className='lg:hidden lg:h-[39px] text-center text-[12px] text-[#FFFFFF] px-4 py-2 bg-[#3CB46E] rounded-lg'>{downloaded ? <span>{downloaded}% Downloading...</span> : "Download Image"}</button>
+                            <button onClick={() => { download(imagedata.urls.full) }} className='lg:hidden lg:h-[39px] text-center text-[12px] text-[#FFFFFF] px-4 py-2 bg-[#3CB46E] rounded-lg'>{downloaded ? <span>{downloaded}% {downloaded == 100?"Downloaded":"Downloading..."}</span> : "Download Image"}</button>
                             <div className='flex gap-1 items-center'>
                                 <div className='text-[#858484] text-[10px] lg:text-sm font-bold'><span>{formatNumberToThousands(imagedata.likes)}</span> Downloads</div>
                                 <div className='flex gap-1 items-center mx-2 lg:mx-4'>
